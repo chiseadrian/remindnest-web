@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" href="logo.png" sizes="192x192" type="image/png">
     <link rel="apple-touch-icon" href="logo.png">
     
     <!-- SEO & Meta Tags -->
@@ -54,7 +54,7 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "RemindNest",
-      "alternateName": "RemindNest App",
+      "alternateName": ["Remind Nest", "RemindNest App"],
       "url": "https://remindnest.com/"
     }
     </script>
@@ -175,19 +175,19 @@
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                 </span>
-                <span class="text-xs font-bold text-indigo-400 tracking-widest uppercase">
+                <span class="text-xs font-bold text-indigo-300 tracking-widest uppercase">
                     <span class="lang-en">Powered by AI</span>
-                    <span class="lang-es">Potenciado por IA</span>
+                    <span class="lang-es" aria-hidden="true">Potenciado por IA</span>
                 </span>
             </div>
 
             <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                <span class="lang-en">AI Voice Reminder App. <br><span class="text-indigo-400">Free your mind.</span></span>
-                <span class="lang-es">App de Recordatorios por Voz. <br><span class="text-indigo-400">Libera tu mente.</span></span>
+                <span class="lang-en">AI Voice Reminder App. <br><span class="text-indigo-300">Free your mind.</span></span>
+                <span class="lang-es" aria-hidden="true">App de Recordatorios por Voz. <br><span class="text-indigo-300">Libera tu mente.</span></span>
             </h1>
             <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
                 <span class="lang-en">Organize your reminders and habits using only your voice.</span>
-                <span class="lang-es">Organiza tus recordatorios y hábitos usando solo tu voz.</span>
+                <span class="lang-es" aria-hidden="true">Organiza tus recordatorios y hábitos usando solo tu voz.</span>
             </p>
             
             <div id="download" class="flex flex-col md:flex-row justify-center items-center gap-4 mb-20">
@@ -640,6 +640,10 @@
             const ogLocale = document.querySelector('meta[property="og:locale"]');
             const metaKeywords = document.querySelector('meta[name="keywords"]');
 
+            // Accessibility & SEO: Toggle aria-hidden on language elements
+            const enElements = document.querySelectorAll('.lang-en');
+            const esElements = document.querySelectorAll('.lang-es');
+
             if (lang === 'es') {
                 body.classList.replace('active-en', 'active-es');
                 btnEs.classList.add('active');
@@ -654,6 +658,10 @@
                 if(twDesc) twDesc.content = "Organiza tu vida hablando. RemindNest usa IA para crear recordatorios y hábitos usando solo tu voz.";
                 if(ogLocale) ogLocale.content = "es_ES";
                 if(metaKeywords) metaKeywords.content = "recordatorios por voz, app ia, tracker habitos, productividad voz, agenda inteligente";
+
+                // Toggle aria-hidden
+                enElements.forEach(el => el.setAttribute('aria-hidden', 'true'));
+                esElements.forEach(el => el.removeAttribute('aria-hidden'));
             } else {
                 body.classList.replace('active-es', 'active-en');
                 btnEn.classList.add('active');
@@ -668,6 +676,10 @@
                 if(twDesc) twDesc.content = "Organize your life by speaking. RemindNest uses AI to create reminders and track habits voice-first.";
                 if(ogLocale) ogLocale.content = "en_US";
                 if(metaKeywords) metaKeywords.content = "voice reminder app, ai productivity, habit tracker, voice planner, smart agenda";
+
+                // Toggle aria-hidden
+                esElements.forEach(el => el.setAttribute('aria-hidden', 'true'));
+                enElements.forEach(el => el.removeAttribute('aria-hidden'));
             }
         }
 
