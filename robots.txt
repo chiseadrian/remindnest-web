@@ -1,0 +1,8 @@
+User-agent: *
+# Allow public pages (privacy.html, terms.html, index.html)
+Allow: /
+# Block private application routes
+Disallow: /app/
+Disallow: /dashboard/
+
+Sitemap: https://remindnest.com/sitemap.xml

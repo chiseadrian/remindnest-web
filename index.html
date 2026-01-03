@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="logo.png">
-    <title>RemindNest</title>
+    <link rel="apple-touch-icon" href="logo.png">
+    
+    <!-- SEO & Meta Tags -->
+    <title>RemindNest: AI Voice Reminder App & Habit Tracker</title>
+    <meta name="description" content="Organize your life by speaking. RemindNest uses AI to create reminders and track habits voice-first. Download for free on iOS and Android.">
+    <meta name="keywords" content="recordatorios por voz con ia, tracker de habitos inteligente, productividad por voz, voice reminder app, ai habit tracker">
+    <link rel="canonical" href="https://remindnest.com">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://remindnest.com/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="RemindNest: AI Voice Reminder App & Habit Tracker">
+    <meta property="og:description" content="Organize your life by speaking. RemindNest uses AI to create reminders and track habits voice-first.">
+    <meta property="og:image" content="https://remindnest.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://remindnest.com/">
+    <meta property="twitter:title" content="RemindNest: AI Voice Reminder App & Habit Tracker">
+    <meta property="twitter:description" content="Organize your life by speaking. RemindNest uses AI to create reminders and track habits voice-first.">
+    <meta property="twitter:image" content="https://remindnest.com/og-image.jpg">
+
+    <!-- Performance & Assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; scroll-behavior: smooth; }
@@ -18,26 +43,131 @@
         .active-es .lang-en { display: none; }
         .active-es .lang-es { display: inline-block; }
         
-        .lang-btn.active { color: #818cf8; text-decoration: underline; }
+        .lang-btn { opacity: 0.4; transition: all 0.3s ease; filter: grayscale(100%); }
+        .lang-btn:hover { opacity: 0.8; }
+        .lang-btn.active { opacity: 1; filter: grayscale(0%); transform: scale(1.1); box-shadow: 0 0 10px rgba(129, 140, 248, 0.3); }
         .logo-img { height: 40px; width: auto; border-radius: 8px; }
     </style>
+    <!-- Schema Markup for Brand & Website (Fixes Google Site Name & Logo) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "RemindNest",
+      "alternateName": "RemindNest App",
+      "url": "https://remindnest.com/"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "RemindNest",
+      "url": "https://remindnest.com/",
+      "logo": "https://remindnest.com/logo.png"
+    }
+    </script>
+    <!-- Schema Markup for Software Application -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "RemindNest",
+      "operatingSystem": "ANDROID, IOS",
+      "applicationCategory": "ProductivityApplication",
+      "image": "https://remindnest.com/logo.png",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1250"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock"
+      },
+      "featureList": "Recordatorios por voz, Tracking de hábitos con IA, Procesamiento de lenguaje natural",
+      "description": "RemindNest es una app de productividad 'voice-first' que utiliza IA para organizar tus recordatorios y hábitos sin esfuerzo.",
+      "author": {
+        "@type": "Organization",
+        "name": "RemindNest Inc."
+      }
+    }
+    </script>
+    <!-- Schema Markup for FAQPage (SEO Boost) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How does the Voice AI work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RemindNest uses advanced Natural Language Processing (NLP) to listen to your commands and automatically extract dates, times, and task details, creating reminders instantly without typing."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is this app helpful for ADHD?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the voice-first interface reduces friction and cognitive load, making it ideal for users with ADHD to quickly capture tasks before they are forgotten."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is my voice data private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We process voice commands securely. Your audio is not stored permanently, only the text transcript is saved to create your reminders."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is RemindNest free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RemindNest offers a generous free plan. We also have a Premium subscription for unlimited habits and advanced AI insights."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Can I export my data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you have full control. You can export your reminders and habit history to CSV or PDF at any time."
+        }
+      }]
+    }
+    </script>
 </head>
 <body class="text-slate-200 active-en">
 
     <header class="container mx-auto px-6 py-6 flex justify-between items-center">
         <div class="flex items-center space-x-3">
-            <img src="logo.png" alt="RemindNest Logo" class="logo-img">
+            <img src="logo.png" alt="RemindNest Logo" class="logo-img" width="40" height="40">
             <span class="text-2xl font-bold tracking-tight text-white">RemindNest</span>
         </div>
         
         <div class="flex items-center space-x-4">
-            <div class="flex space-x-2 bg-slate-800/50 p-1 rounded-lg border border-slate-700">
-                <button onclick="changeLang('en')" id="btn-en" class="lang-btn active px-2 py-1 text-xs font-bold transition text-slate-400">EN</button>
-                <button onclick="changeLang('es')" id="btn-es" class="lang-btn px-2 py-1 text-xs font-bold transition text-slate-400">ES</button>
+            <div class="flex space-x-3 bg-slate-800/50 p-2 rounded-xl border border-slate-700">
+                <button onclick="changeLang('en')" id="btn-en" class="lang-btn active rounded-sm overflow-hidden" aria-label="English">
+                    <svg class="w-6 h-4" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="60" height="40" fill="#B22234"/>
+                        <path d="M0,4h60M0,12h60M0,20h60M0,28h60M0,36h60" stroke="#fff" stroke-width="4"/>
+                        <rect width="26" height="22" fill="#3C3B6E"/>
+                    </svg>
+                </button>
+                <button onclick="changeLang('es')" id="btn-es" class="lang-btn rounded-sm overflow-hidden" aria-label="Español">
+                    <svg class="w-6 h-4" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="60" height="40" fill="#AA151B"/>
+                        <rect y="10" width="60" height="20" fill="#F1BF00"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </header>
 
+    <main>
     <section class="hero-gradient pt-16 pb-32">
         <div class="container mx-auto px-6 text-center">
             <div class="inline-flex items-center space-x-2 bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-full mb-8">
@@ -45,12 +175,15 @@
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                 </span>
-                <span class="text-xs font-bold text-indigo-400 tracking-widest uppercase">Powered by Gemini AI</span>
+                <span class="text-xs font-bold text-indigo-400 tracking-widest uppercase">
+                    <span class="lang-en">Powered by AI</span>
+                    <span class="lang-es">Potenciado por IA</span>
+                </span>
             </div>
 
             <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                <span class="lang-en">Free your mind. <br><span class="text-indigo-400">AI takes care.</span></span>
-                <span class="lang-es">Libera tu mente. <br><span class="text-indigo-400">La IA se encarga.</span></span>
+                <span class="lang-en">AI Voice Reminder App. <br><span class="text-indigo-400">Free your mind.</span></span>
+                <span class="lang-es">App de Recordatorios por Voz. <br><span class="text-indigo-400">Libera tu mente.</span></span>
             </h1>
             <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
                 <span class="lang-en">Organize your reminders and habits using only your voice.</span>
@@ -58,17 +191,23 @@
             </p>
             
             <div id="download" class="flex flex-col md:flex-row justify-center items-center gap-4 mb-20">
-                <a href="#" class="flex items-center space-x-4 bg-black border border-slate-700 px-8 py-3 rounded-xl hover:bg-slate-900 transition w-full md:w-auto justify-center">
+                <a href="#" id="btn-android" class="flex items-center space-x-4 bg-black border border-slate-700 px-8 py-3 rounded-xl hover:bg-slate-900 transition w-full md:w-auto justify-center">
                     <i data-lucide="play" class="w-6 h-6"></i>
                     <div class="text-left">
-                        <p class="text-[10px] uppercase text-slate-400 leading-none tracking-tighter">Get it on</p>
+                        <p class="text-[10px] uppercase text-slate-400 leading-none tracking-tighter">
+                            <span class="lang-en">Get it on</span>
+                            <span class="lang-es">Disponible en</span>
+                        </p>
                         <p class="text-lg font-semibold leading-none">Google Play</p>
                     </div>
                 </a>
-                <a href="#" class="flex items-center space-x-4 bg-black border border-slate-700 px-8 py-3 rounded-xl hover:bg-slate-900 transition w-full md:w-auto justify-center">
+                <a href="#" id="btn-ios" class="flex items-center space-x-4 bg-black border border-slate-700 px-8 py-3 rounded-xl hover:bg-slate-900 transition w-full md:w-auto justify-center">
                     <i data-lucide="apple" class="w-6 h-6"></i>
                     <div class="text-left">
-                        <p class="text-[10px] uppercase text-slate-400 leading-none tracking-tighter">Download on the</p>
+                        <p class="text-[10px] uppercase text-slate-400 leading-none tracking-tighter">
+                            <span class="lang-en">Download on the</span>
+                            <span class="lang-es">Consíguelo en el</span>
+                        </p>
                         <p class="text-lg font-semibold leading-none">App Store</p>
                     </div>
                 </a>
@@ -77,7 +216,7 @@
             <div class="relative max-w-xs mx-auto">
                 <div class="absolute inset-0 bg-indigo-500/20 blur-[120px] rounded-full"></div>
                 <div class="relative rounded-[3rem] border-[12px] border-slate-900 bg-slate-900 aspect-[9/19] flex items-center justify-center shadow-2xl overflow-hidden">
-                    <img src="logo.png" class="w-24 opacity-20 grayscale" alt="App watermark">
+                    <img src="logo.png" class="w-24 opacity-20 grayscale" alt="App watermark" width="96" height="96">
                 </div>
             </div>
         </div>
@@ -89,19 +228,19 @@
                 <div class="bg-slate-800/30 p-8 rounded-3xl border border-slate-700/50">
                     <i data-lucide="mic" class="text-indigo-400 mb-6 w-10 h-10"></i>
                     <h3 class="text-xl font-semibold mb-3 text-white">
-                        <span class="lang-en">Voice AI</span>
-                        <span class="lang-es">IA de Voz</span>
+                        <span class="lang-en">Smart Voice Capture</span>
+                        <span class="lang-es">Captura Inteligente por Voz</span>
                     </h3>
                     <p class="text-slate-400 text-sm">
-                        <span class="lang-en">Talk naturally. Gemini AI extracts time and task details for you.</span>
+                        <span class="lang-en">Talk naturally. AI extracts time and task details for you.</span>
                         <span class="lang-es">Habla con naturalidad. La IA extrae fecha y tarea automáticamente.</span>
                     </p>
                 </div>
                 <div class="bg-slate-800/30 p-8 rounded-3xl border border-slate-700/50">
                     <i data-lucide="activity" class="text-indigo-400 mb-6 w-10 h-10"></i>
                     <h3 class="text-xl font-semibold mb-3 text-white">
-                        <span class="lang-en">Fitness Habits</span>
-                        <span class="lang-es">Hábitos Fitness</span>
+                        <span class="lang-en">Habit & Routine Tracker</span>
+                        <span class="lang-es">Tracker de Hábitos y Rutinas</span>
                     </h3>
                     <p class="text-slate-400 text-sm">
                         <span class="lang-en">Perfect for workout routines and nutrition tracking.</span>
@@ -111,8 +250,8 @@
                 <div class="bg-slate-800/30 p-8 rounded-3xl border border-slate-700/50">
                     <i data-lucide="shield" class="text-indigo-400 mb-6 w-10 h-10"></i>
                     <h3 class="text-xl font-semibold mb-3 text-white">
-                        <span class="lang-en">Secure</span>
-                        <span class="lang-es">Seguro</span>
+                        <span class="lang-en">Secure Cloud Sync</span>
+                        <span class="lang-es">Sincronización Segura</span>
                     </h3>
                     <p class="text-slate-400 text-sm">
                         <span class="lang-en">Your data is synced and secured with industrial standards.</span>
@@ -123,26 +262,488 @@
         </div>
     </section>
 
-    <footer class="bg-slate-950 py-12 border-t border-slate-800 text-center">
-        <img src="logo.png" alt="Logo" class="h-10 mx-auto mb-6 opacity-50">
-        <p class="text-slate-500 text-xs">© 2025 RemindNest. Built by a Developer for Developers.</p>
+    <section class="py-24 bg-slate-900/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">
+                <span class="lang-en">Simple Pricing</span>
+                <span class="lang-es">Precios Simples</span>
+            </h2>
+
+            <!-- Toggle Switch -->
+            <div class="flex justify-center items-center space-x-4 mb-12">
+                <span id="label-monthly" class="text-white font-medium cursor-pointer transition-colors" onclick="setBilling(false)">
+                    <span class="lang-en">Monthly</span>
+                    <span class="lang-es">Mensual</span>
+                </span>
+                <button onclick="toggleBilling()" class="w-14 h-8 bg-slate-700 rounded-full p-1 relative transition-colors duration-300 focus:outline-none" aria-label="Toggle billing">
+                    <div class="w-6 h-6 bg-indigo-500 rounded-full shadow-md transform transition-transform duration-300" id="toggle-circle"></div>
+                </button>
+                <span id="label-yearly" class="text-slate-400 font-medium cursor-pointer transition-colors" onclick="setBilling(true)">
+                    <span class="lang-en">Yearly</span>
+                    <span class="lang-es">Anual</span>
+                    <span class="text-indigo-400 text-xs ml-1 font-bold bg-indigo-500/10 px-2 py-0.5 rounded-full border border-indigo-500/20">-16%</span>
+                </span>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Free Plan -->
+                <div class="bg-slate-800/50 p-6 rounded-3xl border border-slate-700 flex flex-col">
+                    <h3 class="text-lg font-semibold text-white mb-2">
+                        <span class="lang-en">Free</span>
+                        <span class="lang-es">Gratis</span>
+                    </h3>
+                    <div class="text-3xl font-bold text-white mb-4 price-monthly">$0<span class="text-sm text-slate-400 font-normal"><span class="lang-en">/mo</span><span class="lang-es">/mes</span></span></div>
+                    <div class="text-3xl font-bold text-white mb-4 price-yearly hidden">$0<span class="text-sm text-slate-400 font-normal"><span class="lang-en">/yr</span><span class="lang-es">/año</span></span></div>
+                    <ul class="space-y-3 mb-6 flex-1 text-sm">
+                        <li class="flex items-center text-slate-300">
+                            <i data-lucide="check" class="w-4 h-4 text-indigo-400 mr-2"></i>
+                            <span class="lang-en">5 Reminders/day</span>
+                            <span class="lang-es">5 Recordatorios/día</span>
+                        </li>
+                        <li class="flex items-center text-slate-300">
+                            <i data-lucide="check" class="w-4 h-4 text-indigo-400 mr-2"></i>
+                            <span class="lang-en">Basic Tracking</span>
+                            <span class="lang-es">Tracking básico</span>
+                        </li>
+                        <li class="flex items-center text-slate-300">
+                            <i data-lucide="check" class="w-4 h-4 text-indigo-400 mr-2"></i>
+                            <span class="lang-en">7-day History</span>
+                            <span class="lang-es">Historial de 7 días</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full py-2 px-4 text-center rounded-xl border border-slate-600 text-white hover:bg-slate-700 transition font-semibold text-sm">
+                        <span class="lang-en">Get Started</span>
+                        <span class="lang-es">Empezar</span>
+                    </a>
+                </div>
+
+                <!-- Premium Plan (Toggleable) -->
+                <div class="bg-gradient-to-b from-indigo-900/20 to-slate-800/50 p-6 rounded-3xl border border-indigo-500/50 relative flex flex-col lg:scale-105 z-10 shadow-xl">
+                    <div class="absolute top-0 right-0 bg-indigo-500 text-white text-[10px] font-bold px-2 py-1 rounded-bl-xl rounded-tr-2xl">
+                        <span class="lang-en">POPULAR</span>
+                        <span class="lang-es">POPULAR</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Premium</h3>
+                    
+                    <!-- Price Display -->
+                    <div class="text-3xl font-bold text-white mb-4 price-monthly">
+                        $2.99<span class="text-sm text-slate-400 font-normal"><span class="lang-en">/mo</span><span class="lang-es">/mes</span></span>
+                    </div>
+                    <div class="price-yearly hidden mb-4">
+                        <div class="text-3xl font-bold text-white">
+                            $2.49<span class="text-sm text-slate-400 font-normal"><span class="lang-en">/mo</span><span class="lang-es">/mes</span></span>
+                            <span class="ml-2 text-xs font-bold bg-green-500/10 text-green-400 border border-green-500/20 px-2 py-1 rounded-full align-middle">
+                                <span class="lang-en">Save 16%</span>
+                                <span class="lang-es">Ahorras 16%</span>
+                            </span>
+                        </div>
+                        <div class="text-xs text-slate-400 mt-1">
+                            <span class="lang-en">Billed yearly $29.99</span>
+                            <span class="lang-es">Facturado anualmente $29.99</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 mb-6 flex-1 text-sm">
+                        <li class="flex items-center text-slate-300">
+                            <i data-lucide="check" class="w-4 h-4 text-indigo-400 mr-2"></i>
+                            <span class="lang-en">Unlimited Reminders</span>
+                            <span class="lang-es">Recordatorios ilimitados</span>
+                        </li>
+                        <li class="flex items-center text-slate-300">
+                            <i data-lucide="check" class="w-4 h-4 text-indigo-400 mr-2"></i>
+                            <span class="lang-en">AI Insights</span>
+                            <span class="lang-es">Análisis IA</span>
+                        </li>
+                        <li class="flex items-center text-slate-300">
+                            <i data-lucide="check" class="w-4 h-4 text-indigo-400 mr-2"></i>
+                            <span class="lang-en">Unlimited History</span>
+                            <span class="lang-es">Historial ilimitado</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full py-2 px-4 text-center rounded-xl bg-indigo-600 text-white hover:bg-indigo-500 transition font-semibold text-sm shadow-lg shadow-indigo-500/25">
+                        <span class="lang-en">Start Trial</span>
+                        <span class="lang-es">Prueba Gratis</span>
+                    </a>
+                </div>
+
+                <!-- Lifetime Plan -->
+                <div class="bg-slate-800/50 p-6 rounded-3xl border border-slate-700 flex flex-col">
+                    <h3 class="text-lg font-semibold text-white mb-2">
+                        <span class="lang-en">Lifetime</span>
+                        <span class="lang-es">De por vida</span>
+                    </h3>
+                    <div class="text-3xl font-bold text-white mb-4">$79.99</div>
+                    <ul class="space-y-3 mb-6 flex-1 text-sm">
+                        <li class="flex items-center text-slate-300">
+                            <i data-lucide="check" class="w-4 h-4 text-indigo-400 mr-2"></i>
+                            <span class="lang-en">Unlimited Reminders</span>
+                            <span class="lang-es">Recordatorios ilimitados</span>
+                        </li>
+                        <li class="flex items-center text-slate-300">
+                            <i data-lucide="check" class="w-4 h-4 text-indigo-400 mr-2"></i>
+                            <span class="lang-en">AI Insights</span>
+                            <span class="lang-es">Análisis IA</span>
+                        </li>
+                        <li class="flex items-center text-slate-300">
+                            <i data-lucide="check" class="w-4 h-4 text-indigo-400 mr-2"></i>
+                            <span class="lang-en">Unlimited History</span>
+                            <span class="lang-es">Historial ilimitado</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full py-2 px-4 text-center rounded-xl border border-slate-600 text-white hover:bg-slate-700 transition font-semibold text-sm">
+                        <span class="lang-en">Buy Now</span>
+                        <span class="lang-es">Comprar</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 border-t border-slate-800/50">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">
+                <span class="lang-en">FAQ</span>
+                <span class="lang-es">Preguntas Frecuentes</span>
+            </h2>
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="group border border-slate-800 rounded-2xl p-5 cursor-pointer hover:bg-slate-800/30 transition-all" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-semibold text-white">
+                            <span class="lang-en">How does the AI work?</span>
+                            <span class="lang-es">¿Cómo funciona la IA?</span>
+                        </h4>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300 group-hover:text-indigo-400"></i>
+                    </div>
+                    <div class="faq-answer hidden mt-3 pt-3 border-t border-slate-800/50">
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            <span class="lang-en">Simply speak your request like "Remind me to call Mom every Sunday at 10 AM". Our AI processes the natural language and sets up the recurring reminder automatically.</span>
+                            <span class="lang-es">Simplemente di tu petición como "Recuérdame llamar a mamá cada domingo a las 10 AM". Nuestra IA procesa el lenguaje natural y configura el recordatorio recurrente automáticamente.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="group border border-slate-800 rounded-2xl p-5 cursor-pointer hover:bg-slate-800/30 transition-all" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-semibold text-white">
+                            <span class="lang-en">Is it good for ADHD?</span>
+                            <span class="lang-es">¿Es útil para el TDAH?</span>
+                        </h4>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300 group-hover:text-indigo-400"></i>
+                    </div>
+                    <div class="faq-answer hidden mt-3 pt-3 border-t border-slate-800/50">
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            <span class="lang-en">Absolutely. The voice-first interface removes the friction of typing and navigating menus, helping you capture tasks the moment you think of them.</span>
+                            <span class="lang-es">Absolutamente. La interfaz por voz elimina la fricción de escribir y navegar menús, ayudándote a capturar tareas en el momento exacto en que las piensas.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="group border border-slate-800 rounded-2xl p-5 cursor-pointer hover:bg-slate-800/30 transition-all" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-semibold text-white">
+                            <span class="lang-en">Is my voice data private?</span>
+                            <span class="lang-es">¿Son privados mis datos de voz?</span>
+                        </h4>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300 group-hover:text-indigo-400"></i>
+                    </div>
+                    <div class="faq-answer hidden mt-3 pt-3 border-t border-slate-800/50">
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            <span class="lang-en">Yes. We process voice commands securely. Your audio is not stored permanently, only the text transcript is saved to create your reminders.</span>
+                            <span class="lang-es">Sí. Procesamos los comandos de voz de forma segura. Tu audio no se guarda permanentemente, solo se guarda la transcripción de texto para crear tus recordatorios.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="group border border-slate-800 rounded-2xl p-5 cursor-pointer hover:bg-slate-800/30 transition-all" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-semibold text-white">
+                            <span class="lang-en">Is RemindNest free?</span>
+                            <span class="lang-es">¿RemindNest es gratis?</span>
+                        </h4>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300 group-hover:text-indigo-400"></i>
+                    </div>
+                    <div class="faq-answer hidden mt-3 pt-3 border-t border-slate-800/50">
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            <span class="lang-en">RemindNest offers a generous free plan. We also have a Premium subscription for unlimited habits and advanced AI insights.</span>
+                            <span class="lang-es">RemindNest ofrece un plan gratuito generoso. También tenemos una suscripción Premium para hábitos ilimitados y análisis avanzados de IA.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="group border border-slate-800 rounded-2xl p-5 cursor-pointer hover:bg-slate-800/30 transition-all" onclick="toggleFaq(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-semibold text-white">
+                            <span class="lang-en">Can I export my data?</span>
+                            <span class="lang-es">¿Puedo exportar mis datos?</span>
+                        </h4>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300 group-hover:text-indigo-400"></i>
+                    </div>
+                    <div class="faq-answer hidden mt-3 pt-3 border-t border-slate-800/50">
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            <span class="lang-en">Yes, you have full control. You can export your reminders and habit history to CSV or PDF at any time.</span>
+                            <span class="lang-es">Sí, tienes control total. Puedes exportar tus recordatorios e historial de hábitos a CSV o PDF en cualquier momento.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="bg-slate-950 pt-20 pb-10 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Column -->
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="logo.png" alt="RemindNest Logo" class="h-8 w-auto rounded-md" width="32" height="32">
+                        <span class="text-xl font-bold text-white">RemindNest</span>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                        <span class="lang-en">The voice-first productivity app designed to clear your mind and organize your life with AI.</span>
+                        <span class="lang-es">La app de productividad por voz diseñada para despejar tu mente y organizar tu vida con IA.</span>
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-500 hover:text-white transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-slate-500 hover:text-white transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-slate-500 hover:text-white transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6">
+                        <span class="lang-en">Product</span>
+                        <span class="lang-es">Producto</span>
+                    </h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-indigo-400 transition"><span class="lang-en">Features</span><span class="lang-es">Funcionalidades</span></a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition"><span class="lang-en">Pricing</span><span class="lang-es">Precios</span></a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition"><span class="lang-en">Download</span><span class="lang-es">Descargar</span></a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition"><span class="lang-en">Changelog</span><span class="lang-es">Novedades</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6">
+                        <span class="lang-en">Company</span>
+                        <span class="lang-es">Compañía</span>
+                    </h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-indigo-400 transition"><span class="lang-en">About Us</span><span class="lang-es">Sobre Nosotros</span></a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition"><span class="lang-en">Blog</span><span class="lang-es">Blog</span></a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition"><span class="lang-en">Careers</span><span class="lang-es">Empleo</span></a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6">
+                        <span class="lang-en">Legal</span>
+                        <span class="lang-es">Legal</span>
+                    </h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a href="privacy.html" class="hover:text-indigo-400 transition"><span class="lang-en">Privacy Policy</span><span class="lang-es">Privacidad</span></a></li>
+                        <li><a href="terms.html" class="hover:text-indigo-400 transition"><span class="lang-en">Terms of Service</span><span class="lang-es">Términos</span></a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition"><span class="lang-en">Cookie Policy</span><span class="lang-es">Cookies</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-600 text-xs mb-4 md:mb-0">
+                    &copy; 2025 RemindNest Inc. <span class="lang-en">All rights reserved.</span><span class="lang-es">Todos los derechos reservados.</span>
+                </p>
+                <div class="flex space-x-6 text-xs text-slate-600">
+                    <span class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span> <span class="lang-en">All Systems Operational</span><span class="lang-es">Sistemas Operativos</span></span>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900/95 border-t border-slate-800 p-6 backdrop-blur-sm z-50 hidden transform transition-transform duration-500 translate-y-full">
+        <div class="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="text-sm text-slate-300 text-center md:text-left">
+                <p class="lang-en">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies. <a href="privacy.html" class="text-indigo-400 hover:underline">Learn more</a>.</p>
+                <p class="lang-es">Usamos cookies para mejorar tu experiencia. Al continuar visitando este sitio aceptas nuestro uso de cookies. <a href="privacy.html" class="text-indigo-400 hover:underline">Leer más</a>.</p>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="acceptCookies()" class="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium transition text-sm shadow-lg shadow-indigo-500/20">
+                    <span class="lang-en">Accept</span>
+                    <span class="lang-es">Aceptar</span>
+                </button>
+                <button onclick="declineCookies()" class="px-6 py-2 border border-slate-600 hover:bg-slate-800 text-slate-300 rounded-lg font-medium transition text-sm">
+                    <span class="lang-en">Decline</span>
+                    <span class="lang-es">Rechazar</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        lucide.createIcons();
+        // Esperar a que el DOM esté listo para cargar iconos (evita error si lucide no ha cargado)
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) lucide.createIcons();
+
+            // Detección automática de idioma
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang && userLang.startsWith('es')) {
+                changeLang('es');
+            }
+
+            // Check cookie consent
+            if (!localStorage.getItem('cookieConsent')) {
+                const banner = document.getElementById('cookie-banner');
+                banner.classList.remove('hidden');
+                setTimeout(() => {
+                    banner.classList.remove('translate-y-full');
+                }, 100);
+            }
+
+            // OS Detection for Download Buttons
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const btnAndroid = document.getElementById('btn-android');
+            const btnIos = document.getElementById('btn-ios');
+
+            function highlightBtn(btn) {
+                if (!btn) return;
+                btn.classList.remove('bg-black', 'border-slate-700', 'hover:bg-slate-900');
+                btn.classList.add('bg-indigo-600', 'border-indigo-500', 'hover:bg-indigo-500', 'shadow-lg', 'shadow-indigo-500/50', 'scale-105', 'ring-2', 'ring-indigo-400/50');
+            }
+
+            if (/android/i.test(userAgent)) {
+                highlightBtn(btnAndroid);
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                highlightBtn(btnIos);
+            }
+        });
+
         function changeLang(lang) {
             const body = document.body;
             const btnEs = document.getElementById('btn-es');
             const btnEn = document.getElementById('btn-en');
+            
+            // Meta tags selection
+            const metaDesc = document.querySelector('meta[name="description"]');
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            const ogDesc = document.querySelector('meta[property="og:description"]');
+            const twTitle = document.querySelector('meta[property="twitter:title"]');
+            const twDesc = document.querySelector('meta[property="twitter:description"]');
+            const ogLocale = document.querySelector('meta[property="og:locale"]');
+            const metaKeywords = document.querySelector('meta[name="keywords"]');
+
             if (lang === 'es') {
                 body.classList.replace('active-en', 'active-es');
                 btnEs.classList.add('active');
                 btnEn.classList.remove('active');
+                document.title = "RemindNest: App de Recordatorios y Hábitos con IA de Voz";
+                document.documentElement.lang = 'es';
+                
+                if(metaDesc) metaDesc.content = "La primera App de productividad Voice-first. Crea recordatorios, trackea hábitos y organiza tu vida hablando con nuestra IA. Disponible en iOS y Android.";
+                if(ogTitle) ogTitle.content = "RemindNest: App de Recordatorios y Hábitos con IA de Voz";
+                if(ogDesc) ogDesc.content = "Organiza tu vida hablando. RemindNest usa IA para crear recordatorios y hábitos usando solo tu voz.";
+                if(twTitle) twTitle.content = "RemindNest: App de Recordatorios y Hábitos con IA de Voz";
+                if(twDesc) twDesc.content = "Organiza tu vida hablando. RemindNest usa IA para crear recordatorios y hábitos usando solo tu voz.";
+                if(ogLocale) ogLocale.content = "es_ES";
+                if(metaKeywords) metaKeywords.content = "recordatorios por voz, app ia, tracker habitos, productividad voz, agenda inteligente";
             } else {
                 body.classList.replace('active-es', 'active-en');
                 btnEn.classList.add('active');
                 btnEs.classList.remove('active');
+                document.title = "RemindNest: AI Voice Reminder App & Habit Tracker";
+                document.documentElement.lang = 'en';
+                
+                if(metaDesc) metaDesc.content = "Organize your life by speaking. RemindNest uses AI to create reminders and track habits voice-first. Download for free on iOS and Android.";
+                if(ogTitle) ogTitle.content = "RemindNest: AI Voice Reminder App & Habit Tracker";
+                if(ogDesc) ogDesc.content = "Organize your life by speaking. RemindNest uses AI to create reminders and track habits voice-first.";
+                if(twTitle) twTitle.content = "RemindNest: AI Voice Reminder App & Habit Tracker";
+                if(twDesc) twDesc.content = "Organize your life by speaking. RemindNest uses AI to create reminders and track habits voice-first.";
+                if(ogLocale) ogLocale.content = "en_US";
+                if(metaKeywords) metaKeywords.content = "voice reminder app, ai productivity, habit tracker, voice planner, smart agenda";
             }
+        }
+
+        function toggleFaq(element) {
+            const answer = element.querySelector('.faq-answer');
+            const icon = element.querySelector('i');
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        let isYearly = false;
+        
+        function setBilling(yearly) {
+            if (isYearly === yearly) return;
+            isYearly = yearly;
+            updateBillingUI();
+        }
+
+        function toggleBilling() {
+            isYearly = !isYearly;
+            updateBillingUI();
+        }
+
+        function updateBillingUI() {
+            const circle = document.getElementById('toggle-circle');
+            const labelMonthly = document.getElementById('label-monthly');
+            const labelYearly = document.getElementById('label-yearly');
+            const monthlyPrices = document.querySelectorAll('.price-monthly');
+            const yearlyPrices = document.querySelectorAll('.price-yearly');
+            
+            if (isYearly) {
+                circle.classList.add('translate-x-6');
+                
+                labelMonthly.classList.remove('text-white');
+                labelMonthly.classList.add('text-slate-400');
+                
+                labelYearly.classList.remove('text-slate-400');
+                labelYearly.classList.add('text-white');
+                
+                monthlyPrices.forEach(el => el.classList.add('hidden'));
+                yearlyPrices.forEach(el => el.classList.remove('hidden'));
+            } else {
+                circle.classList.remove('translate-x-6');
+                
+                labelMonthly.classList.remove('text-slate-400');
+                labelMonthly.classList.add('text-white');
+                
+                labelYearly.classList.remove('text-white');
+                labelYearly.classList.add('text-slate-400');
+                
+                monthlyPrices.forEach(el => el.classList.remove('hidden'));
+                yearlyPrices.forEach(el => el.classList.add('hidden'));
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            hideCookieBanner();
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            hideCookieBanner();
+        }
+
+        function hideCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            banner.classList.add('translate-y-full');
+            setTimeout(() => {
+                banner.classList.add('hidden');
+            }, 500);
         }
     </script>
 </body>

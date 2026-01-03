@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.png">
+    <title>404 - Page Not Found | RemindNest</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Page not found. Return to RemindNest home page.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://remindnest.com/404.html">
+    <meta property="og:title" content="404 - Page Not Found | RemindNest">
+    <meta property="og:description" content="Page not found. Return to RemindNest home page.">
+    <meta property="og:image" content="https://remindnest.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://remindnest.com/404.html">
+    <meta property="twitter:title" content="404 - Page Not Found | RemindNest">
+    <meta property="twitter:description" content="Page not found. Return to RemindNest home page.">
+    <meta property="twitter:image" content="https://remindnest.com/logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #94a3b8; }
+        
+        /* Sistema de idiomas simple */
+        .lang-es { display: none; }
+        .active-en .lang-en { display: inline; }
+        .active-en .lang-es { display: none; }
+        .active-es .lang-en { display: none; }
+        .active-es .lang-es { display: inline; }
+        
+        .active-en span.lang-en { display: inline; }
+        .active-es span.lang-es { display: inline; }
+    </style>
+</head>
+<body class="active-en h-screen flex flex-col items-center justify-center text-center px-6 selection:bg-indigo-500 selection:text-white overflow-hidden">
+
+    <!-- Background Glow -->
+    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/10 blur-[100px] rounded-full -z-10 pointer-events-none"></div>
+
+    <div class="relative mb-6">
+        <h1 class="text-9xl font-bold text-white tracking-tighter opacity-10">404</h1>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <i data-lucide="ghost" class="w-20 h-20 text-indigo-400"></i>
+        </div>
+    </div>
+
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        <span class="lang-en">Page not found</span>
+        <span class="lang-es">Página no encontrada</span>
+    </h2>
+    
+    <p class="text-slate-400 max-w-md mb-10 text-lg leading-relaxed">
+        <span class="lang-en">Oops! The page you are looking for might have been removed or is temporarily unavailable.</span>
+        <span class="lang-es">¡Ups! La página que buscas podría haber sido eliminada o no está disponible temporalmente.</span>
+    </p>
+
+    <a href="index.html" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-3 rounded-xl transition font-semibold shadow-lg shadow-indigo-500/25 group">
+        <i data-lucide="arrow-left" class="w-5 h-5 group-hover:-translate-x-1 transition-transform"></i>
+        <span class="lang-en">Back to Home</span>
+        <span class="lang-es">Volver al Inicio</span>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) lucide.createIcons();
+
+            // Auto-detect language
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang && userLang.startsWith('es')) {
+                document.body.classList.replace('active-en', 'active-es');
+                document.documentElement.lang = 'es';
+                document.title = "404 - Página no encontrada | RemindNest";
+                
+                // Update SEO tags dynamically for Spanish users
+                document.querySelector('meta[name="description"]').content = "Página no encontrada. Volver al inicio de RemindNest.";
+                document.querySelector('meta[property="og:title"]').content = "404 - Página no encontrada | RemindNest";
+                document.querySelector('meta[property="og:description"]').content = "Página no encontrada. Volver al inicio de RemindNest.";
+                document.querySelector('meta[property="twitter:title"]').content = "404 - Página no encontrada | RemindNest";
+                document.querySelector('meta[property="twitter:description"]').content = "Página no encontrada. Volver al inicio de RemindNest.";
+            }
+        });
+    </script>
+</body>
+</html>
